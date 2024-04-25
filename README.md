@@ -1,1 +1,13 @@
 # Diagrama-a-codigo-Java
+
+### Este ejercicio tiene como finalidad llevar a la práctica los conceptos de programación orientada a objetos, traduciendo los diagramas UML y los requerimientos a un programa funcional en Java. Desarrolla el código que refleje las relaciones y funcionalidades detalladas en esos diagramas.
+ 
+Tarea: implementar un programa en Java que modele el escenario elegido. El programa debe incluir clases y métodos que representen fielmente las estructuras y relaciones observadas en los diagramas UML. Además, incorporar un método "main" que demuestre cómo se interactuaría con el sistema, mostrando la funcionalidad de las clases y los métodos que desarrollaste.
+En la implementación, cada clase del UML debe estar claramente definida con sus respectivos atributos y métodos. Es crucial que las interacciones entre clases, como asociaciones, agregaciones y composiciones, se manejen correctamente. Por ejemplo, considera un cliente que realiza un pedido; este acto debería desencadenar una serie de interacciones entre las clases Cliente y Pedido que tú necesitas codificar de manera coherente. Por ejemplo, para ello el Cliente debería tener un atributo que indicase el monto de dinero que tiene y posteriormente a realizar el pedido, dicho monto se debería ver afectado de forma "automática" es decir con un método que al realizar el pedido maneje el monto de dinero del cliente que ha realizado el pedido (esto es solo un ejemplo).
+
+No limitarse solo a replicar los diagramas y requerimientos; también tener la libertad de añadir nuevas clases, variables, métodos o cualquier elemento que creas que puede enriquecer el proyecto. Se puede incluir listas o arrays para gestionar colecciones de objetos y agregar cálculos que enriquezcan la funcionalidad del programa. 
+Para demostrar que la aplicación funciona como se espera, implementar en el método "main" una serie de pruebas que simulan situaciones reales donde se crean y manipulan objetos de acuerdo con los requisitos del sistema. Estas pruebas no solo ayudarán a verificar la correcta funcionalidad de la aplicación, sino que también mostrarán cómo interactúan los componentes de cada modelo.
+ 
+Se comienza definiendo y construyendo las clases que formarán la base de la aplicación, asegurándose de que cada una se adhiere a lo que fue especificado en el diagrama UML. Introducir gradualmente métodos que permitan manipular estas clases y avanzar hacia la implementación de interacciones más complejas entre ellas. Durante todo el proceso, recordar mantener el código bien organizado y comentado, especialmente en aquellas secciones que manejen lógicas más complejas o menos intuitivas.
+Recordar ir realizando pruebas a medida que se implementan nuevas funcionalidades.
+ 
