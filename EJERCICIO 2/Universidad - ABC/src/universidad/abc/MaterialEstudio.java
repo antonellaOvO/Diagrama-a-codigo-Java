@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package universidad.abc;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
+
 /**
  *
  * @author anto_
@@ -15,7 +14,7 @@ public class MaterialEstudio {
     private String tipo;
     private String url;
     
-    public MaterialEstudio (String nombre, String tipo, String url) {
+    public MaterialEstudio (String nombre, String tipo) {
          this.nombre = nombre;
          this.tipo = tipo;
          this.url = url;

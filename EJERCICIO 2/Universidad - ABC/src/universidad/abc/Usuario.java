@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package universidad.abc;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
+
 /**
  *
  * @author anto_
@@ -85,11 +84,27 @@ public class Usuario {
         this.autenticacionDosFactores = nuevoAutenticacionDosFactores;
     }
       
-      public boolean iniciarSesion(String correo, String contrasena) {
-          /*if()....- return boolean- remember return something because it's not void*/
-      }
+     
       
-      public boolean crearCuenta() {
-      /*if()....- return boolean - remember return something because it's not void*/
-      }
+    public boolean crearCuenta() {
+        if (this.correo.contains("@") && contrasena.matches(".*\\d.*")) {
+            System.out.println("Enhorabuena, tu cuenta con correo " + this.correo + " ha sido creada");
+            return true; 
+        } else { /* Hay que poner el else{} ya que si la condición del if no se cumple, el método no devuelve ningún valor, lo cual está en conflicto con la declaración del método como boolean*/
+            return false;
+    }
+          
+    } 
+      
+    public boolean iniciarSesion(String correo, String contrasena) {
+        if (correo.contains("@") && contrasena.matches(".*\\d.*")) { /*No ponemos contrasena.matches("[0-9]")- verifica si la contraseña contiene solo un dígito del 0 al 9. Esto significa que la contraseña debe ser exactamente un dígito. Si deseas verificar si la contraseña contiene al menos un dígito, debes usar "\\d+" en lugar de "[0-9]".*/
+            System.out.println("Has iniciado sesión en el Portal del " + rol + " con tu correo " + correo); /**Esta sentencia hay que ponerla antes del reutrn, ya que después de que el método devuelve true, hay un bloque de código que intenta imprimir un mensaje usando System.out.println. Sin embargo, este bloque nunca se ejecutará porque el método ya ha salido al encontrar la instrucción return true;. Esto se debe a que las instrucciones después de un return en un método no se ejecutan. */
+            return  true;
+        } else { /* Hay que poner el else{} ya que si la condición del if no se cumple, el método no devuelve ningún valor, lo cual está en conflicto con la declaración del método como boolean*/
+            System.out.println("Lo sentimos, pero tu correo o contraseña son incorrectos");
+            return false;
+        }
+    }
+     
+      
 }
