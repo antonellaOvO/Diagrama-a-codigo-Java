@@ -17,6 +17,7 @@ public class Curso {
     private List<MaterialEstudio> materialesEstudio;
     private List<Tarea> tareas; 
     private List<Examen> examenes; 
+    private List<PlataformaLearning> contenidoPlataformaLearning; 
    
     
     public Curso (String nombre, String codigo, String nombreProfesor) {
@@ -27,6 +28,7 @@ public class Curso {
         this.materialesEstudio = new ArrayList<>();
         this.tareas = new ArrayList<>();
         this.examenes = new ArrayList<>();
+        this.contenidoPlataformaLearning = new ArrayList<>();
 }
     
    public String getNombreCurso(){
@@ -49,19 +51,31 @@ public class Curso {
    return tareas;
    }
    
-   public void añadirMaterialEstudioEnListaMaterialesEstudio(MaterialEstudio materialEstudio){
+   public List <PlataformaLearning> getContenidoPlataformaLearning(){
+   return contenidoPlataformaLearning;
+   }
+   
+   public void añadirMaterialEstudioProfesorEnListaMaterialesEstudioCurso(MaterialEstudio materialEstudio, String nombreMaterialEstudio){
+    if(materialEstudio.getNombre().equals(nombreMaterialEstudio)){ 
     this.materialesEstudio.add(materialEstudio);
-    System.out.println("El material de estudio colgado para este curso son: " + materialEstudio.getNombre() + "de tipo " + materialEstudio.getTipo());
+    System.out.println("El material de estudio colgado para el curso es: " + materialEstudio.getNombre() + " - de tipo: " + materialEstudio.getTipo());
+        }
    } 
    
-   public void añadirTareaAlListaTareas(Tarea tareaEnviada){
+   public void añadirTareaAlListaTareas(Tarea tareaEnviada, String nombreTarea){
+    if(tareaEnviada.getNombreTarea().equals(nombreTarea)){
     this.tareas.add(tareaEnviada);
-    System.out.println("Las tareas de este curso son en total: " + tareaEnviada.getNombreTarea());
+    System.out.println("La tarea que justo se acaba de crear en este curso es la siguiente: " + tareaEnviada.getNombreTarea());
+    }
     }
    
    public void añadirExamenesEnListaExamenesCurso(Examen examen){
     this.examenes.add(examen);
    }
+   
+   public void añadirPlataformaLearningaListacontenidoPlataformaLearning(PlataformaLearning plataformaLearning){
+    this.contenidoPlataformaLearning.add(plataformaLearning);
+    }
    
     
    

@@ -77,21 +77,6 @@ public void crearTareaYGuardarEnListaTareasCreadas(String nombre, String asignat
 		tareasCreadas.add(nuevaTarea);
 	} 
 
-public void crearMaterialEstudioYGuardarlaEnListaMateriales(String nombre, String tipo){
-		MaterialEstudio materialEstudio = new MaterialEstudio(nombre, tipo);
-                materiales.add(materialEstudio);
-	} 
-
-public void crearExamenesSinRespuestasYGuardarlaEnLista(String pregunta){
-		Examen examen = new Examen(pregunta);
-                examenesSinRespuesta.add(examen);
-	}
-
-public void crearExamenesConRespuestasYGuardarlaEnLista(String pregunta, String respuesta){
-		Examen examen = new Examen(pregunta, respuesta);
-                examenesConRespuesta.add(examen);
-	}
-
 public void crearCalificacionYGuardarlaEnLista(String asignatura, double nota){
 		Calificacion nuevaCalificacion = new Calificacion(asignatura, nota);
 		calificacionesPublicadas.add(nuevaCalificacion);
@@ -109,6 +94,29 @@ public void eliminarPublicacionProfesor(Profesor profesor, int index){
     }
 }
 
+public void crearMaterialEstudioYGuardarlaEnListaMateriales(String nombre, String tipo){
+		MaterialEstudio materialEstudio = new MaterialEstudio(nombre, tipo);
+                materiales.add(materialEstudio);
+	} 
+
+public void crearExamenesSinRespuestasYGuardarlaEnLista(String pregunta){
+		Examen examen = new Examen(pregunta);
+                examenesSinRespuesta.add(examen);
+	}
+
+public void crearExamenesConRespuestasYGuardarlaEnLista(String pregunta, String respuesta){
+		Examen examen = new Examen(pregunta, respuesta);
+                examenesConRespuesta.add(examen);
+	}
+
+public void calificarEstudiante(Estudiante estudiante, Tarea tarea, double nota) {
+    Calificacion calificacion = new Calificacion(tarea.getAsignaturaTarea(), nota);
+    this.calificacionesPublicadas.add(calificacion);
+    estudiante.recibirCalificacion(calificacion);
+    tarea.anadirCalificacion(calificacion);
+    System.out.println("Se ha calificado al estudiante " + estudiante.getNombre() + " " + estudiante.getApellido() + " en la asignatura " + tarea.getAsignaturaTarea() + " concretamente en la tarea: " + tarea.getNombreTarea() + " con la nota: " + calificacion.getNotaCalificacion());
+    
+}
 
 
 }

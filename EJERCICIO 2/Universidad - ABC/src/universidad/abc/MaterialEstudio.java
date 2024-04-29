@@ -18,6 +18,7 @@ public class MaterialEstudio {
          this.nombre = nombre;
          this.tipo = tipo;
          this.url = url;
+         
     }
     
     public String getNombre(){

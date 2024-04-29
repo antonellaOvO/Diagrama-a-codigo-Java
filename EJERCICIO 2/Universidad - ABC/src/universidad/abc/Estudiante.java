@@ -45,18 +45,14 @@ return this.foroPublicaciones;
 }
 
 //Para confirmar al estudiante que ha enviado una tarea de las que ha creado Profesor:
-public boolean enviarTarea(Profesor profesor) {
-   String nuevoStatus = "entregado"; /*pendiente modificar- quizás debiera ser Curso curso- curso.getTareasCurso()- no funciona- mirar porque ya que tareas debe también estar incluida en el listado de tareas de Curso*/
-        for (Tarea tarea : profesor.getTareasCreadas()) {
+public boolean enviarTarea(Estudiante estudiante, String nuevoStatus) {
+   /*String nuevoStatus = "entregado"; /*pendiente modificar- quizás debiera ser Curso curso- curso.getTareasCurso()- no funciona- mirar porque ya que tareas debe también estar incluida en el listado de tareas de Curso*/
+        for (Tarea tarea : estudiante.getTareas()) {
             tarea.setStatusTarea(nuevoStatus);
         }
         System.out.println("Has enviado la tarea, gracias " + this.getNombre() + "!");
-        return true;
-        
+        return true; 
     }
-
-
-
 
 public void añadirListaCursosInscritos(Curso cursoInscrito){
 this.cursosInscritos.add(cursoInscrito);
@@ -72,7 +68,7 @@ System.out.println(this.getNombre()+ " se te acaba de asignar la siguiente tarea
 
 public void recibirCalificacion(Calificacion calificacion) {
    this.calificacionesRecibidas.add(calificacion);
-System.out.println(this.getNombre()+ " se te acaba de asignar la siguiente calificacion: " + calificacion.getNotaCalificacion() + " de la asignatura " + calificacion.getAsignaturaCalificacion() ); 
+System.out.println(this.getNombre()+ " se te acaba de asignar la siguiente calificacion: " + calificacion.getNotaCalificacion()); 
 }
 
 public void crearPublicacionYGuardarEnLista(String comentario){
@@ -82,7 +78,7 @@ foroPublicaciones.add(publicacionForo);
 
 public void eliminarPublicacionEstudiante(Estudiante estudiante, int index){
     for(int i= index; i <= index ; i++){
-    System.out.println(estudiante.getForoPublicaciones().get(i).getComentarioPublicacionForo() + "\n"); /*Para imprimir un elemento de un array  que contiene objetos como elementos: siempre sería getarray().get(poner el índice del elemento en el array (en este caso el elemento es un obejto)- en este caso también ponemos getAtributodelObjeto()para coger el atributo "comentario" del objeto foro )*/
+    System.out.println(estudiante.getForoPublicaciones().get(i).getComentarioPublicacionForo()); /*Para imprimir un elemento de un array  que contiene objetos como elementos: siempre sería getarray().get(poner el índice del elemento en el array (en este caso el elemento es un obejto)- en este caso también ponemos getAtributodelObjeto()para coger el atributo "comentario" del objeto foro )*/
     estudiante.getForoPublicaciones().remove(i);
     }
 }

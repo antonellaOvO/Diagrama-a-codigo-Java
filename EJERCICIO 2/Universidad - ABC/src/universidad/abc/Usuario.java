@@ -90,7 +90,8 @@ public class Usuario {
         if (this.correo.contains("@") && contrasena.matches(".*\\d.*")) {
             System.out.println("Enhorabuena, tu cuenta con correo " + this.correo + " ha sido creada");
             return true; 
-        } else { /* Hay que poner el else{} ya que si la condición del if no se cumple, el método no devuelve ningún valor, lo cual está en conflicto con la declaración del método como boolean*/
+        } else { /* Hay que poner el else{} ya que si la condición del if no se cumple, el método no devuelve ningún boolean, lo cual está en conflicto con la declaración del método que ha de retornar un boolean*/
+            System.out.println("Lo sentimos, pero tu " + this.correo + " o " + this.contrasena + " no son válidos para crear una cuenta. El correo debe contener al menos un @ y la contraseña contener al menos un número.");
             return false;
     }
           
