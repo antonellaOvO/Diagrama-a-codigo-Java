@@ -1,3 +1,4 @@
+/*Autora: Antonella Alares*/
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
@@ -188,7 +189,15 @@ public class UniversidadABC {
         /*Curso*/
         
             System.out.println("DATOS CURSO:");
-           
+            
+            System.out.println(" "); //Para espaciar
+         
+            /*Para visualizar/comprobar que los cursos que ya estaban creados por defecto se han añadido al listado de cursos de la clase Curso*/
+            System.out.println("Estos son todos los cursos que se están disponibles por el momento:");
+            for(Curso curso: Curso.getTodosLosCursos()){
+            System.out.println("Curso: " + curso.getNombreCurso()+ " - impartido por el profesor: " + curso.getNombreProfesorCurso());
+            }
+            
             System.out.println(" ");
             
             System.out.println("Tareas:");

@@ -13,7 +13,7 @@ public class Curso {
     private String nombre;
     private String codigo;
     private String nombreProfesor;
-    private List<Curso> todosLosCursos = new ArrayList<>();
+    private static List<Curso> todosLosCursos = new ArrayList<>();
     private List<MaterialEstudio> materialesEstudio;
     private List<Tarea> tareas; 
     private List<Examen> examenes; 
@@ -41,6 +41,10 @@ public class Curso {
    
    public String getNombreProfesorCurso(){
    return nombreProfesor;
+   }
+   
+   public static List<Curso> getTodosLosCursos(){
+   return todosLosCursos;
    }
    
    public List<MaterialEstudio> getMaterialEstudio(){
